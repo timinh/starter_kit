@@ -12,7 +12,7 @@
 **clone the repository :**
 
 ```bash
-git clone https://github.com/timinh/starter_kit.git my_project
+git clone https://github.com/timinh/starter_kit.git my_project && rm -Rf my_project/.git
 ```
 
 **then cd into the project folder :**
