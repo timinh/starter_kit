@@ -33,3 +33,44 @@ make start
 docker compose up -d -f deployments/local/compose.yaml
 ```
 Or in your IDE, right click on the **compose.yaml** in the *deployments/local* folder and select **compose up**
+
+# Add services
+
+In the *deployments/local/compose.yaml* file add : 
+
+## maildev
+```yaml
+    ###> maildev ###
+    maildev:
+        extends:
+            file: ../services/maildev.yaml
+            service: maildev-local
+    ### maildev ###
+```
+
+## nodejs
+```yaml
+    ###> nodejs ###
+    nodejs:
+        extends:
+            file: ../services/nodejs.yaml
+            service: nodejs-local
+    ### nodejs ###
+```
+
+# Run commands in containers
+
+Access the app container in bash : 
+```bash
+make bash
+```
+
+The database container : 
+```bash
+make bash-db
+```
+
+The front container (for node packages installation or removal) :
+```bash
+make bash-front
+```
